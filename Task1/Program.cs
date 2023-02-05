@@ -5,6 +5,7 @@ while (isWork)
     System.Console.WriteLine();
     System.Console.WriteLine("1 - Task 09: Max digit of a random number between 10 and 99");
     System.Console.WriteLine("2 - Task 11: First and last digits of a random 3-digit number");
+    System.Console.WriteLine("3 - Task 12: Is divisible");
     System.Console.WriteLine("0 - Exit");
     System.Console.Write("Enter a number of task: ");
 
@@ -45,7 +46,25 @@ while (isWork)
 
                     break;
                 }
- 
+
+                case 3: // Напишите программу, которая будет принимать на вход два числа и выводить, является ли второе число кратным первому. 
+                        // Если число 2 не кратно числу 1, то программа выводит остаток от деления.
+                {
+                    System.Console.WriteLine("Enter two numbers: ");
+
+                    if (!(int.TryParse(Console.ReadLine(), out int a) && int.TryParse(Console.ReadLine(), out int b)))
+                    {
+                        System.Console.WriteLine("Imput error");
+                        break;
+                    }
+
+                    if (a % b == 0) System.Console.WriteLine($"{a} is divisible by {b}");
+                    else System.Console.WriteLine($"{a} is not divisible by {b}. The remainder is: {a % b}");
+
+                    break;
+                }
+
+
                 case 0:
                 {
                     isWork = false;
