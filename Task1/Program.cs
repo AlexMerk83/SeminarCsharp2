@@ -3,7 +3,7 @@
 while (isWork)
 {
     System.Console.WriteLine();
-    System.Console.WriteLine("1 - Task 08: Max digit of a random number between 10 and 99");
+    System.Console.WriteLine("1 - Task 09: Max digit of a random number between 10 and 99");
     System.Console.WriteLine("2 - Task 11: First and last digits of a random 3-digit number");
     System.Console.WriteLine("0 - Exit");
     System.Console.Write("Enter a number of task: ");
