@@ -6,6 +6,8 @@ while (isWork)
     System.Console.WriteLine("1 - Task 09: Max digit of a random number between 10 and 99");
     System.Console.WriteLine("2 - Task 11: First and last digits of a random 3-digit number");
     System.Console.WriteLine("3 - Task 12: Is divisible");
+    System.Console.WriteLine("4 - Task 14: Is divisible by 7 and 23");
+    System.Console.WriteLine("5 - Task 14.1: Sum of the first 5 numbers divisible by 2 and 3");
     System.Console.WriteLine("0 - Exit");
     System.Console.Write("Enter a number of task: ");
 
@@ -54,16 +56,72 @@ while (isWork)
 
                     if (!(int.TryParse(Console.ReadLine(), out int a) && int.TryParse(Console.ReadLine(), out int b)))
                     {
-                        System.Console.WriteLine("Imput error");
+                        System.Console.WriteLine("Input error");
                         break;
                     }
 
-                    if (a % b == 0) System.Console.WriteLine($"{a} is divisible by {b}");
-                    else System.Console.WriteLine($"{a} is not divisible by {b}. The remainder is: {a % b}");
+                    if (a == 0)
+                    {
+                        System.Console.WriteLine("Cannot be divided by 0");
+                        break;
+                    }
+
+                    if (b % a == 0) System.Console.WriteLine($"{b} is divisible by {a}");
+                    else System.Console.WriteLine($"{b} is not divisible by {a}. The remainder is: {b % a}");
 
                     break;
                 }
 
+                case 4: // Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23. 
+                {
+                    System.Console.Write("Enter a number: ");
+
+                    if (!int.TryParse(Console.ReadLine(), out int a))
+                    {
+                        System.Console.WriteLine("Input error");
+                        break;
+                    }
+
+                    if (a % 7 == 0 && a % 23 == 0) System.Console.WriteLine($"{a} is divisible by 7 and 23");
+                    else System.Console.WriteLine($"{a} is not divisible by 7 and 23");
+
+                    break;
+                }
+
+                case 5: // Напишите программу, которая выдаёт сумму пяти первых чисел одновременно кратных 2 и 3. 
+                {
+                    int a = 1,
+                        sum = 0,
+                        count = 0;
+
+                    while (count < 5)
+                    {
+                        if (a % 2 == 0 && a % 3 == 0)
+                        {
+                            System.Console.Write($"{a}, ");
+                            sum += a;
+                            count++;
+                        }
+                        a++;
+                    }
+
+                    System.Console.WriteLine();
+                    System.Console.WriteLine($"Sum of the first 5 numbers divisible by 2 and 3 is {sum}");
+
+                    a = 3;
+                    sum = 0;
+                    for (int i = 0; i < 5; i++) 
+                    {
+                        a *= 2;
+                        sum += a;
+                        System.Console.Write($"{a}, ");
+                    }
+                    
+                    System.Console.WriteLine();
+                    System.Console.WriteLine($"Sum of the first 5 numbers divisible by 2 and 3 is {sum}");
+
+                    break;
+                }
 
                 case 0:
                 {
